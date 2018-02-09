@@ -15,7 +15,7 @@ before_script:
 - sh -e /etc/init.d/xvfb start
 script:
 - npm test
-- test $TRAVIS_NODE_VERSION = "6" && $TRAVIS_PULL_REQUEST ="false" && npm run stryker
+- test $TRAVIS_NODE_VERSION = 6 && $TRAVIS_PULL_REQUEST = false && npm run stryker
 after_success: ".travis/ci-release.jsh"
 env:
   global:
