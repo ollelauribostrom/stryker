@@ -16,6 +16,8 @@ before_script:
 script:
 - test $TRAVIS_NODE_VERSION = 6 && echo 'Node check passed'
 - test $TRAVIS_PULL_REQUEST = false && echo 'PR passed'
+- npm run build
+- npm run stryker
 - npm test
 - test $TRAVIS_NODE_VERSION = 6 && $TRAVIS_PULL_REQUEST = false && npm run stryker
 after_success: ".travis/ci-release.jsh"
